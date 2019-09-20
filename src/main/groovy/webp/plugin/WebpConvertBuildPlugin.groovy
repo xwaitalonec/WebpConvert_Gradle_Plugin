@@ -30,7 +30,7 @@ class WebpConvertBuildPlugin implements Plugin<Project> {
 
                 def dx = project.tasks.findByName("process${variant.name.capitalize()}Resources")
                 def webpConvertPlugin = "webpConvertPlugin${variant.name.capitalize()}"
-                project.task(webpConvertPlugin) << {
+                project.task(webpConvertPlugin)  {
                     String resPath = "${project.buildDir}/intermediates/res/${flavor}/${buildType}"
                     println "resPath:" + resPath
                     def dir = new File("${resPath}")
